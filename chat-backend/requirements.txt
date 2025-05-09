@@ -1,0 +1,5 @@
+fastapi
+groq
+phidata
+uvicorn
+pydantic
