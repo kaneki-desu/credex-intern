@@ -114,7 +114,23 @@ export default function ChatWidget() {
                     {exampleQuestions.map((question) => (
                       <button
                         key={question}
-                        onClick={() => handleSendMessage()}
+                        onClick={() => {
+                          const userMessage: Message = {
+                            id: Date.now(),
+                            text: question,
+                            sender: 'user',
+                            timestamp: new Date(),
+                          };
+                          setMessages(prev => [...prev, userMessage]);
+                          
+                          const botMessage: Message = {
+                            id: Date.now() + 1,
+                            text: mockResponses[question],
+                            sender: 'bot',
+                            timestamp: new Date(),
+                          };
+                          setMessages(prev => [...prev, botMessage]);
+                        }}
                         className="w-full text-left p-2 text-sm bg-gray-50 dark:bg-gray-700 rounded hover:bg-gray-100 dark:hover:bg-gray-600 transition-colors"
                       >
                         {question}
