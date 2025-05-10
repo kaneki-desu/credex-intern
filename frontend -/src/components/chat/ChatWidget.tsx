@@ -149,7 +149,7 @@ export default function ChatWidget() {
               </button>
             </div>
 
-            <div className="flex-1 overflow-y-auto space-y-4  bg-background/20 rounded-xl shadow-lg backdrop-blur-lg border border-background/30 p-6 max-w-md mx-auto">
+            <div className="flex-1 overflow-y-auto space-y-4  bg-background/20  shadow-lg backdrop-blur-lg border border-background/30 p-6 max-w-md mx-auto">
               {messages.length === 0 ? (
                 <motion.div 
                   initial={{ opacity: 0 }}
@@ -236,9 +236,7 @@ export default function ChatWidget() {
               <div ref={messagesEndRef} />
             </div>
 
-            <div className="p-4 border-t border-border bg-card 
-            bg-background/20 rounded-xl shadow-lg backdrop-blur-xxl border border-background/30 p-6 max-w-md mx-auto
-            ">
+            <div className="p-4 border-t border-border bg-card bg-background/20 shadow-lg backdrop-blur-2xl border border-background/50 ">
               <form
                 onSubmit={(e) => {
                   e.preventDefault();
